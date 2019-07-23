@@ -5,7 +5,7 @@ import uuid from 'uuid';
 // Imported Components
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
-import GameArea from './components/GameArea';
+import GameCards from './components/GameCards';
 
 // Imported Styling
 import './App.css';
@@ -109,6 +109,9 @@ class App extends Component {
     this.setState({
       gameCards: this.state.gameCards.map((gamecard) => {
         if (gamecard.id === id) {
+          if(gamecard.clicked === true){
+            return location.reload();
+          }
           gamecard.clicked = true
         }
         return gamecard;
@@ -120,7 +123,14 @@ class App extends Component {
     return (
       <div className="App">
         < Header />
-  
+        <main>
+          <div className="container" >
+            <div className="row" >
+              <GameCards GameCards = {this.state.gameCards} shuffle = {this.shuffle} changeScore = {this.changeScore}
+            clicked = {this.clicked} />
+            </div>
+          </div>
+        </main>
         < Footer />
       </div>
     );
