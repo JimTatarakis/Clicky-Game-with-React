@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import GameCard from './GameCard';
 
-class GameCards extends Component {
-    render() {
-        return this.props.gamecards.map((gamecard) => {
-            <GameCard key = {gamecard.id} gamecard = {gamecard} 
-            shuffle = {this.props.shuffle} changeScore = {this.props.changeScore}
-            clicked = {this.props.clicked} />
-        })
-    }
-}
+const GameCards = props=>{
 
-GameCards.propTypes = {
-    gamecards: PropTypes.array.isRequired,
-    shuffle: PropTypes.func.isRequired,
-    changeScore: PropTypes.func.isRequired,
-    clicked: PropTypes.func.isRequired
+    return (
+                props.gameCards.map((gamecard) => (
+                    <GameCard clicked = {props.clicked} gameCard = {gamecard} />
+                ))
+                )
 }
 
 export default GameCards;

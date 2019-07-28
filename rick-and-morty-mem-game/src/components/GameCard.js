@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-export class GameCard extends Component {
-    render(){
-        const { id, imageUrl } = this.props.gamecard;
-        return (
-            <div className="col s3">
-                <image onClick={this.props.clicked.bind(this, id)} src={ imageUrl }>{id}</image>
+
+
+
+const GameCard = props => {
+    return (
+        <div className="col s3 card">
+            <div className="card-image">
+                <img onClick={() => props.clicked(props.gameCard.id)} id={props.gameCard.id} src={props.gameCard.imageUrl} alt={props.gameCard.id} />
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default GameCard;

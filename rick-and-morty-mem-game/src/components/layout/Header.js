@@ -4,11 +4,11 @@ export default function Header() {
     return (
         <React.Fragment>
             <header>
-                <div class="navbar-fixed">
+                <div className="navbar-fixed">
                     <nav>
-                        <div class="container">
-                            <div class="nav-wrapper">
-                                <a href="!#" class="brand-logo grey-text darken-2">Rick and Morty - Memory Game</a>
+                        <div className="container">
+                            <div className="nav-wrapper">
+                                <a href="!#" className="brand-logo grey-text darken-2">Rick and Morty - Memory Game</a>
                             </div>
                         </div>
                     </nav>
